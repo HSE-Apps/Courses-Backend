@@ -27,7 +27,8 @@ router.post("/", auth(), async (req, res) => {
     if (userCourseData) {
       return res.json({ ...requester, courseData: userCourseData });
     } else {
-      const newUser = new User({ msId: requester.localAccountId });
+      const newUser = new User({ msId: requester.user.localAccountId });
+      console.log(newUser);
       newUser.save();
       return res.json({ ...requester, courseData: newUser });
     }

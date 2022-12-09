@@ -8,7 +8,7 @@ dotenv.config();
 module.exports = (options) => {
   return async (req, res, next) => {
     const authState = req.body.user;
-    //    console.log(authState.user.role, "authState");
+    //console.log(authState.user.role, "authState");
 
     try {
       if (!options) {
